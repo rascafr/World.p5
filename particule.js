@@ -8,7 +8,7 @@ function Particule() {
         this.x = x;
         this.y = y;
         this.vx = Math.random() * 2 - 1; // velocity x
-        this.vy = Math.random() * 2 - 1; // velocity y
+        this.vy = -12;//Math.random() * 2 - 1; // velocity y
         this.gravity = 0.2; // how much force we apply with gravity
         this.damping = 0.4; // how much the redistance is when particule will bounce on walls
         this.traction = 0.7; // how much bouce effect is applied
@@ -30,8 +30,8 @@ function Particule() {
             // traction here
             this.vx *= this.traction;
         } else if (this.y - this.radius <= 0) {
-            this.vy = -this.vy * this.damping;
-            this.y = this.radius;
+            /*this.vy = -this.vy * this.damping;
+            this.y = this.radius;*/
         }
     
         this.vy += this.gravity;
